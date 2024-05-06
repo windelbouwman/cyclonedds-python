@@ -57,6 +57,8 @@ if "BUILDING_SDIST" not in os.environ:
                 str(cyclone.include_path),
                 str(this_directory / "clayer")
             ],
+            define_macros=[("Py_LIMITED_API", "0x03060000")],
+            py_limited_api=True,
             libraries=['ddsc'],
             library_dirs=[
                 str(cyclone.library_path),
@@ -79,6 +81,8 @@ if "BUILDING_SDIST" not in os.environ:
                     str(cyclone.include_path),
                     str(this_directory / "idlpy" / "include")
                 ],
+                define_macros=[("Py_LIMITED_API", "0x03060000")],
+                py_limited_api=True,
                 libraries=['ddsc', 'cycloneddsidl'],
                 library_dirs=[
                     str(cyclone.library_path),
